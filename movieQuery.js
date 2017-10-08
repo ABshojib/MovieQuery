@@ -27,14 +27,37 @@ function addMovie( movie ){
 var newMovie = {title:"padma",year:"1987",length:125,rating:"7.0",genre:"art-flim"};
 console.log(addMovie(newMovie));
 
-function movieByRating(){
-  //add code
+function movieByRating(rate){
+ 
+var fg=rate.toString();
+for(var i=0;i<movieList.length;++i){
+  if(movieList[i].rating == fg){
+    return movieList[i];
+  }
+
+ }
+
 }
 
-console.log(movieByRating());
+console.log(movieByRating(8.5));
 
 function findByTitle( title ){
-  //add code
+ var vt;
+ for(var i=0;i<movieList.length;++i){
+      vt=movieList[i].title;
+       var str=vt.toString();
+        var str2=str.toLocaleLowerCase();
+        var res=str2.split(" ");
+
+       if(res.includes(title)){
+         console.log(movieList[i]);
+
+       }
+ 
+ }
+
+
+
 }
 
 console.log(findByTitle("matrix"));
